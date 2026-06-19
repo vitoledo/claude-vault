@@ -1,0 +1,19 @@
+{
+  "name": "claude-vault",
+  "displayName": "Claude Vault",
+  "version": "1.0.0",
+  "description": "A per-user governance kit for your Claude Code environment: audits what lives in .claude/, lints it for conflicts and dead config, surfaces idle context cost, and helps you enrich prompts with the resources you actually have.",
+  "author": {
+    "name": "Victor de Toledo",
+    "url": "https://www.linkedin.com/in/victordetoledo/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "environment",
+    "vault",
+    "governance",
+    "cleanup",
+    "prompt-engineering"
+  ]
+}
