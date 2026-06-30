@@ -24,10 +24,11 @@ to view the inventory (markdown list + offline HTML map).
 | `/vault-list` | command | Read-only queryable view of `vault.json` as filtered, sorted markdown tables (by category, cost, status, scope). Adds a Last-used column when `usage.json` exists. |
 | `/vault-map` | command | Generates a self-contained `vault-map.html`: resources sized by context cost, colored by status, tinted by idle severity when usage data exists, hooks laid out by lifecycle event. Renders offline. |
 
-Five Node helper scripts do the deterministic, token-cheap heavy lifting:
+Six Node helper scripts do the deterministic, token-cheap heavy lifting:
 `scan-claude-dir.mjs` (enumeration), `check-references.mjs` (reference resolution),
-`crunch-usage.mjs` (log aggregation), `apply-disable.mjs` (reversible disable executor),
-and `build-map.mjs` (self-contained HTML generation). They are cross-platform
+`crunch-usage.mjs` (log aggregation), `join-usage.mjs` (usage-to-vault join + idle
+severity), `apply-disable.mjs` (reversible disable executor), and `build-map.mjs`
+(self-contained HTML generation). They are cross-platform
 (Windows + POSIX) and require Node only (no Python).
 
 ## Requirements

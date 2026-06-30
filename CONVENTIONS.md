@@ -18,7 +18,7 @@ claude-vault/
 ├── commands/{vault-refresh.md, vault-doctor.md, enrich.md, vault-usage.md,
 │            vault-prune.md, vault-list.md, vault-map.md}
 ├── scripts/{scan-claude-dir.mjs, check-references.mjs, crunch-usage.mjs,
-│           apply-disable.mjs, build-map.mjs}
+│           join-usage.mjs, apply-disable.mjs, build-map.mjs}
 ├── CONVENTIONS.md
 └── README.md
 ```
