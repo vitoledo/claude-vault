@@ -43,9 +43,13 @@ STAGE 0 — Bootstrap BOTH artifacts (§P.2 / §0.5).
 STAGE 1 — Load + rank candidates (no recompute).
 - Parse vault.json and usage.json. Join by name (usage.json already carries the
   resolved vault name — trust it; do not re-normalize log names here).
-- Candidate set = usage severity 🔴 → 🟠 → 🟡, most-actionable first. ⚪ INFO items
-  (low/zero cost, or no usage signal) are shown ONLY if the user explicitly asks;
-  never proposed for disabling by default.
+- Candidate set = usage severity 🔴 → 🟠 → 🟡, most-actionable first — these are the
+  signal-backed idle resources (a real lastUsed that went cold). ⚪ INFO items are NEVER
+  proposed by default. Two sub-cases if the user explicitly asks:
+  - costly-but-no-signal (severity ⚪, signal "no-signal", contextCostClass HIGH/MED,
+    status active) — legitimate review candidates; offer these first. "Never seen" is
+    not proof of non-use, so confirm extra-carefully and frame as review, not cleanup.
+  - low/zero cost, disabled, hooks/rules, inferred mcp — trivial; mention only if pressed.
 - For each candidate, derive the action mechanism from vault.json's disableMechanism
   (see STAGE 3 mapping). Resources whose status is already "disabled" are skipped.
 
